@@ -1,0 +1,1035 @@
+fileFormatVersion: 2
+guid: 7b5733dd3ac0cea499367489083f7516
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: nuvemEDITAVEL_Frame_0
+    originalName: 
+    pivot: {x: 0.51282054, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 147
+      width: 39
+      height: 19
+    spriteID: 2f8a8320b57bc3a4cbe8e817768f4ca7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 147}
+  - name: nuvemEDITAVEL_Frame_1
+    originalName: 
+    pivot: {x: 0.5555556, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 174
+      width: 36
+      height: 19
+    spriteID: 45062b6aecb167a48bef220b4927b624
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 174}
+  - name: nuvemEDITAVEL_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 120
+      width: 40
+      height: 19
+    spriteID: b2a0b8b57f83f5241a46f8356f43b228
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 120}
+  - name: nuvemEDITAVEL_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.8}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 91
+      width: 40
+      height: 20
+    spriteID: f13505a016c0a0f46b0f31a0f6bf8d70
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 91}
+  - name: nuvemEDITAVEL_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 40
+      height: 21
+    spriteID: b3deca718921a93438ecff38b4eacd6c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: nuvemEDITAVEL_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 4
+      width: 40
+      height: 21
+    spriteID: bd1960730ec6b1c45ad53420f526b63a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 4}
+  - name: nuvemEDITAVEL_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 4
+      width: 40
+      height: 21
+    spriteID: 001d352745b4bfa49a869844b32e4b5e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 4}
+  - name: nuvemEDITAVEL_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 4
+      width: 40
+      height: 21
+    spriteID: 469fd2fd99cc68a47a48334c45ee9cd3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 4}
+  - name: nuvemEDITAVEL_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 120
+      width: 40
+      height: 19
+    spriteID: 0385b707b741bab4a8f6677139eba191
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 120}
+  - name: nuvemEDITAVEL_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 120
+      width: 40
+      height: 19
+    spriteID: ba77096bc055bce43af1ae7a6ec9aab8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 120}
+  - name: nuvemEDITAVEL_Frame_10
+    originalName: 
+    pivot: {x: 0.51282054, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 147
+      y: 147
+      width: 39
+      height: 19
+    spriteID: de9ba8739489b8741a6cdb584761e3dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 147, y: 147}
+  - name: nuvemEDITAVEL_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 120
+      width: 40
+      height: 19
+    spriteID: 17c6be7ccd3ee7644b9247070d606627
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 120}
+  - name: nuvemEDITAVEL_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 196
+      y: 120
+      width: 40
+      height: 19
+    spriteID: cad21ca3a59c77e419646bbf8b4a0ae1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 196, y: 120}
+  - name: nuvemEDITAVEL_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: -0.8}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 91
+      width: 40
+      height: 20
+    spriteID: cd6c9e42d82c8964ea324d8dfbdd4423
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 91}
+  - name: nuvemEDITAVEL_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 196
+      y: 4
+      width: 40
+      height: 21
+    spriteID: 5f8bb172841bda44b88b42a52f7140e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 196, y: 4}
+  - name: nuvemEDITAVEL_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 33
+      width: 40
+      height: 21
+    spriteID: c9c8d681f6a68604dae8803acc9a1112
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 33}
+  - name: nuvemEDITAVEL_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 33
+      width: 40
+      height: 21
+    spriteID: 1af53030a6276fd42a609861d331d81d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 33}
+  - name: nuvemEDITAVEL_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 33
+      width: 40
+      height: 21
+    spriteID: 9d273ded76362d842912ccf74094a6fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 33}
+  - name: nuvemEDITAVEL_Frame_18
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 33
+      width: 40
+      height: 21
+    spriteID: 18f60d95e5607e8449d422d15311fbd1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 33}
+  - name: nuvemEDITAVEL_Frame_19
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 196
+      y: 33
+      width: 40
+      height: 21
+    spriteID: 687ddf174e5aca44fbc4ca1f53fee093
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 196, y: 33}
+  - name: nuvemEDITAVEL_Frame_20
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 62
+      width: 40
+      height: 21
+    spriteID: 725c8e84f3bc68344870dad52f72db27
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 62}
+  - name: nuvemEDITAVEL_Frame_21
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 62
+      width: 40
+      height: 21
+    spriteID: 0d76bbab812ecf94eaebf91c7f485cb6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 62}
+  - name: nuvemEDITAVEL_Frame_22
+    originalName: 
+    pivot: {x: 0.51282054, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 194
+      y: 147
+      width: 39
+      height: 19
+    spriteID: 80d1f16846cbc1e48b4bf905b79b2938
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 194, y: 147}
+  - name: nuvemEDITAVEL_Frame_23
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 147
+      width: 40
+      height: 19
+    spriteID: b58eb644d26144c43bcf0b8b18c3960d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 147}
+  - name: nuvemEDITAVEL_Frame_24
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421053}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 147
+      width: 40
+      height: 19
+    spriteID: 73c9f1a297443d3449beb315734db1fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 147}
+  - name: nuvemEDITAVEL_Frame_25
+    originalName: 
+    pivot: {x: 0.5, y: -0.8}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 196
+      y: 91
+      width: 40
+      height: 20
+    spriteID: 82eb0137e7e48ee4098f4dbc85192f9f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 196, y: 91}
+  - name: nuvemEDITAVEL_Frame_26
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 62
+      width: 40
+      height: 21
+    spriteID: b75d1b5d7fd20c849a4430b70f03d635
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 62}
+  - name: nuvemEDITAVEL_Frame_27
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 62
+      width: 40
+      height: 21
+    spriteID: ac4f00286327ec74d8ab332feece2d6d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 62}
+  - name: nuvemEDITAVEL_Frame_28
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 196
+      y: 62
+      width: 40
+      height: 21
+    spriteID: f2d7e1c0c2567d34081043c46d157dfa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 196, y: 62}
+  - name: nuvemEDITAVEL_Frame_29
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 91
+      width: 40
+      height: 21
+    spriteID: 5ffea81b5c2f6e9458e9309a1850ac4d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 91}
+  - name: nuvemEDITAVEL_Frame_30
+    originalName: 
+    pivot: {x: 0.5, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 91
+      width: 40
+      height: 21
+    spriteID: 1910bcc0a6afbcd4a906589f6d644efd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 91}
+  - name: nuvemEDITAVEL_Frame_31
+    originalName: 
+    pivot: {x: 0.5555556, y: -0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 174
+      width: 36
+      height: 21
+    spriteID: 9dc39fbf876112944b52344c372cf0c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 174}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1149082927
+    name: nuvemEDITAVEL
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: nuvemEDITAVEL_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 16
+        width: 39
+        height: 19
+      spriteId: 2f8a8320b57bc3a4cbe8e817768f4ca7
+    - name: nuvemEDITAVEL_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 16
+        width: 36
+        height: 19
+      spriteId: 45062b6aecb167a48bef220b4927b624
+    - name: nuvemEDITAVEL_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 19
+      spriteId: b2a0b8b57f83f5241a46f8356f43b228
+    - name: nuvemEDITAVEL_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 20
+      spriteId: f13505a016c0a0f46b0f31a0f6bf8d70
+    - name: nuvemEDITAVEL_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: b3deca718921a93438ecff38b4eacd6c
+    - name: nuvemEDITAVEL_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: bd1960730ec6b1c45ad53420f526b63a
+    - name: nuvemEDITAVEL_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 001d352745b4bfa49a869844b32e4b5e
+    - name: nuvemEDITAVEL_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 469fd2fd99cc68a47a48334c45ee9cd3
+    - name: nuvemEDITAVEL_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 19
+      spriteId: 0385b707b741bab4a8f6677139eba191
+    - name: nuvemEDITAVEL_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 19
+      spriteId: ba77096bc055bce43af1ae7a6ec9aab8
+    - name: nuvemEDITAVEL_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: 16
+        width: 39
+        height: 19
+      spriteId: de9ba8739489b8741a6cdb584761e3dc
+    - name: nuvemEDITAVEL_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 19
+      spriteId: 17c6be7ccd3ee7644b9247070d606627
+    - name: nuvemEDITAVEL_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 19
+      spriteId: cad21ca3a59c77e419646bbf8b4a0ae1
+    - name: nuvemEDITAVEL_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 20
+      spriteId: cd6c9e42d82c8964ea324d8dfbdd4423
+    - name: nuvemEDITAVEL_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 5f8bb172841bda44b88b42a52f7140e4
+    - name: nuvemEDITAVEL_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: c9c8d681f6a68604dae8803acc9a1112
+    - name: nuvemEDITAVEL_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 1af53030a6276fd42a609861d331d81d
+    - name: nuvemEDITAVEL_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 9d273ded76362d842912ccf74094a6fd
+    - name: nuvemEDITAVEL_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 18f60d95e5607e8449d422d15311fbd1
+    - name: nuvemEDITAVEL_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 687ddf174e5aca44fbc4ca1f53fee093
+    - name: nuvemEDITAVEL_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 725c8e84f3bc68344870dad52f72db27
+    - name: nuvemEDITAVEL_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 0d76bbab812ecf94eaebf91c7f485cb6
+    - name: nuvemEDITAVEL_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 0
+        y: 16
+        width: 39
+        height: 19
+      spriteId: 80d1f16846cbc1e48b4bf905b79b2938
+    - name: nuvemEDITAVEL_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 19
+      spriteId: b58eb644d26144c43bcf0b8b18c3960d
+    - name: nuvemEDITAVEL_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 19
+      spriteId: 73c9f1a297443d3449beb315734db1fc
+    - name: nuvemEDITAVEL_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 20
+      spriteId: 82eb0137e7e48ee4098f4dbc85192f9f
+    - name: nuvemEDITAVEL_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: b75d1b5d7fd20c849a4430b70f03d635
+    - name: nuvemEDITAVEL_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: ac4f00286327ec74d8ab332feece2d6d
+    - name: nuvemEDITAVEL_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: f2d7e1c0c2567d34081043c46d157dfa
+    - name: nuvemEDITAVEL_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 5ffea81b5c2f6e9458e9309a1850ac4d
+    - name: nuvemEDITAVEL_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 0
+        y: 16
+        width: 40
+        height: 21
+      spriteId: 1910bcc0a6afbcd4a906589f6d644efd
+    - name: nuvemEDITAVEL_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 0
+        y: 16
+        width: 36
+        height: 21
+      spriteId: 9dc39fbf876112944b52344c372cf0c8
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 40, y: 40}

@@ -1,0 +1,587 @@
+fileFormatVersion: 2
+guid: b6b6a2a4c6504f84388a6245565ff0c2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: walk-baixo_Frame_0
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.045454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 64
+      width: 17
+      height: 22
+    spriteID: a3f75b07ec22ae44c9f693042ab89328
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 64}
+  - name: walk-baixo_Frame_1
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 64
+      width: 17
+      height: 22
+    spriteID: c0c51c8973f27584c90df0f5486d3948
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 64}
+  - name: walk-baixo_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.045454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 24
+      height: 22
+    spriteID: d3e02b9bfffe3b441b9dddf30f136e15
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: walk-baixo_Frame_3
+    originalName: 
+    pivot: {x: 0.52380955, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 34
+      width: 21
+      height: 22
+    spriteID: d7b64e3af7e2f8e4bb19292523d62980
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 34}
+  - name: walk-baixo_Frame_4
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.045454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 64
+      width: 17
+      height: 22
+    spriteID: b1273aa21a577814f94df4a77a201249
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 64}
+  - name: walk-baixo_Frame_5
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 79
+      y: 64
+      width: 17
+      height: 22
+    spriteID: 099994793dac04a48ba9545ff3027a43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 79, y: 64}
+  - name: walk-baixo_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -0.045454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 4
+      width: 24
+      height: 22
+    spriteID: ae6e23b80bc3ee2489c860fcad578991
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 36, y: 4}
+  - name: walk-baixo_Frame_7
+    originalName: 
+    pivot: {x: 0.52380955, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 34
+      width: 21
+      height: 22
+    spriteID: 44c9ee922ee277d48a1dcca80dd2bbfc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 34}
+  - name: walk-baixo_Frame_8
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.045454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 64
+      width: 17
+      height: 22
+    spriteID: c7177d7bcb51b4f4c825112f877bc467
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 64}
+  - name: walk-baixo_Frame_9
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 94
+      width: 17
+      height: 22
+    spriteID: ff96ef6e39ee0da4c9154e2b3f1669e7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 94}
+  - name: walk-baixo_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.045454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 4
+      width: 24
+      height: 22
+    spriteID: 883be430bfbeb3f4ab6507ecf6c905ac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 68, y: 4}
+  - name: walk-baixo_Frame_11
+    originalName: 
+    pivot: {x: 0.52380955, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 34
+      width: 21
+      height: 22
+    spriteID: dff2d9be494c3f54ca17d6029785057c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 34}
+  - name: walk-baixo_Frame_12
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.045454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 94
+      width: 17
+      height: 22
+    spriteID: d0982b2b054722e408a389953176f499
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 94}
+  - name: walk-baixo_Frame_13
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 94
+      width: 17
+      height: 22
+    spriteID: 69f44d94f54750e42acbea2c793ca2e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 94}
+  - name: walk-baixo_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: -0.045454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 4
+      width: 24
+      height: 22
+    spriteID: 29f3a31e81c658241acc0df90407c7b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 4}
+  - name: walk-baixo_Frame_15
+    originalName: 
+    pivot: {x: 0.52380955, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 91
+      y: 34
+      width: 21
+      height: 22
+    spriteID: a235d33f0bbc44b439b03d4655e26740
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 91, y: 34}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1471918989
+    name: walk-baixo
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: walk-baixo_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 1
+        width: 17
+        height: 22
+      spriteId: a3f75b07ec22ae44c9f693042ab89328
+    - name: walk-baixo_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 3
+        y: 2
+        width: 17
+        height: 22
+      spriteId: c0c51c8973f27584c90df0f5486d3948
+    - name: walk-baixo_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 1
+        width: 24
+        height: 22
+      spriteId: d3e02b9bfffe3b441b9dddf30f136e15
+    - name: walk-baixo_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 1
+        y: 2
+        width: 21
+        height: 22
+      spriteId: d7b64e3af7e2f8e4bb19292523d62980
+    - name: walk-baixo_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 3
+        y: 1
+        width: 17
+        height: 22
+      spriteId: b1273aa21a577814f94df4a77a201249
+    - name: walk-baixo_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 3
+        y: 2
+        width: 17
+        height: 22
+      spriteId: 099994793dac04a48ba9545ff3027a43
+    - name: walk-baixo_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 1
+        width: 24
+        height: 22
+      spriteId: ae6e23b80bc3ee2489c860fcad578991
+    - name: walk-baixo_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 1
+        y: 2
+        width: 21
+        height: 22
+      spriteId: 44c9ee922ee277d48a1dcca80dd2bbfc
+    - name: walk-baixo_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 3
+        y: 1
+        width: 17
+        height: 22
+      spriteId: c7177d7bcb51b4f4c825112f877bc467
+    - name: walk-baixo_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 3
+        y: 2
+        width: 17
+        height: 22
+      spriteId: ff96ef6e39ee0da4c9154e2b3f1669e7
+    - name: walk-baixo_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: 1
+        width: 24
+        height: 22
+      spriteId: 883be430bfbeb3f4ab6507ecf6c905ac
+    - name: walk-baixo_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 1
+        y: 2
+        width: 21
+        height: 22
+      spriteId: dff2d9be494c3f54ca17d6029785057c
+    - name: walk-baixo_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 3
+        y: 1
+        width: 17
+        height: 22
+      spriteId: d0982b2b054722e408a389953176f499
+    - name: walk-baixo_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 3
+        y: 2
+        width: 17
+        height: 22
+      spriteId: 69f44d94f54750e42acbea2c793ca2e1
+    - name: walk-baixo_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 0
+        y: 1
+        width: 24
+        height: 22
+      spriteId: 29f3a31e81c658241acc0df90407c7b2
+    - name: walk-baixo_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 1
+        y: 2
+        width: 21
+        height: 22
+      spriteId: a235d33f0bbc44b439b03d4655e26740
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 24, y: 24}
