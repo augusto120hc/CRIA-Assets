@@ -74,7 +74,7 @@ public class WeatherSystem : MonoBehaviour
         int hora = System.DateTime.Now.Hour;
         bool isNight = hora >= 18 || hora < 6;
 
-        Debug.Log("Hora PC: " + hora + " | Noite: " + isNight);
+        // Debug.Log("Hora PC: " + hora + " | Noite: " + isNight);
                 
 
         if (data == null || data.weather.Length == 0)
@@ -100,30 +100,30 @@ public class WeatherSystem : MonoBehaviour
        if (clima.Contains("rain"))
 {
     if (iconeChuva != null) iconeChuva.SetActive(true);
-    Debug.Log("Chuva 🌧️");
+    // Debug.Log("Chuva 🌧️");
 }
 else if (clima.Contains("clear"))
 {
     if (isNight)
     {
         if (iconeLua != null) iconeLua.SetActive(true);
-        Debug.Log("Noite 🌙");
+        // Debug.Log("Noite 🌙");
     }
     else
     {
         if (iconeSol != null) iconeSol.SetActive(true);
-        Debug.Log("Sol ☀️");
+        // Debug.Log("Sol ☀️");
     }
 }
 else if (clima.Contains("cloud"))
 {
     if (iconeNublado != null) iconeNublado.SetActive(true);
-    Debug.Log("Nublado ☁️");
+    // Debug.Log("Nublado ☁️");
 }
 else
 {
     if (iconeNublado != null) iconeNublado.SetActive(true);
-    Debug.Log("Outro clima → Nublado ☁️");
+    // Debug.Log("Outro clima → Nublado ☁️");
 }
     }
 }

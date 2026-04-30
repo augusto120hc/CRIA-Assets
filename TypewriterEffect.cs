@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class TypewriterEffect : MonoBehaviour
 {
-    public TMP_Text textUI;
     public float delay = 0.03f;
 
-    public void ShowText(string fullText)
+    Coroutine currentTyping;
+
+    public void ShowText(TMP_Text target, string fullText)
     {
-        StopAllCoroutines();
-        StartCoroutine(TypeText(fullText));
+        if (currentTyping != null)
+        {
+            StopCoroutine(currentTyping);
+        }
+
+        currentTyping = StartCoroutine(TypeText(target, fullText));
     }
 
-    IEnumerator TypeText(string fullText)
+    IEnumerator TypeText(TMP_Text target, string fullText)
     {
-        textUI.text = "";
+        target.text = "";
 
         foreach (char c in fullText)
         {
-            textUI.text += c;
-            yield return new WaitForSecondsRealtime(delay); //  ESSENCIAL
+            target.text += c;
+            yield return new WaitForSecondsRealtime(delay);
         }
+
+        target.text = fullText;
+        target.ForceMeshUpdate();
     }
 }

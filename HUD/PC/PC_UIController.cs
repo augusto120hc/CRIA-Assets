@@ -10,6 +10,8 @@ public class PC_UIController : MonoBehaviour
     public TMP_Text textoData;
     public TMP_Text textoBoasVindasTMP;
 
+    public GameObject botaoInteragir; //Botao entrar no PC
+
 
     private bool pcAberto = false;
 
@@ -23,13 +25,24 @@ public class PC_UIController : MonoBehaviour
         AtualizarData();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
+  
+
+
+    void OnTriggerEnter2D(Collider2D other)
         {
-           Debug.Log("APERTOU E");
+            if (other.CompareTag("Player"))
+            {
+                botaoInteragir.SetActive(true);
+            }
         }
-    }
+
+        void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                botaoInteragir.SetActive(false);
+            }
+        }
 
     public GameObject telaPC; // Canvas do PC
 
@@ -61,7 +74,7 @@ public class PC_UIController : MonoBehaviour
 
     public void AbrirPC()
         {
-            Debug.Log("Abrindo PC e chamando typewriter");
+            // Debug.Log("Abrindo PC e chamando typewriter");
             if (pcAberto) return;
 
             pcAberto = true;
@@ -70,7 +83,7 @@ public class PC_UIController : MonoBehaviour
             telaBoasVindasUI.SetActive(true);
             telaNoticias.SetActive(false);
 
-            typewriter.ShowText("Bem-vinda, Sofia...\nSistema inicializado.");
+            typewriter.ShowText(textoBoasVindas, "Sistema inicializado em: \nBem-vinda, Sofia...\nAvalie estas informações para descobrir seu Perfil ");
         }
 
     public void Continuar()

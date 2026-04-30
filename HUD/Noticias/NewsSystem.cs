@@ -2,27 +2,15 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using TMPro;
-using System.Xml;
 using System.Collections.Generic;
-using System.Text;
+    using UnityEngine.Rendering.Universal;
 
 public class NewsSystem : MonoBehaviour
 {
-    // =========================
-    // API GNEWS
-    // =========================
     [Header("API")]
-    public string apiKey = "62253ab6730e4866a34cfeb323331d4d";
-    private string apiURL = "https://gnews.io/api/v4/top-headlines?country=br&lang=pt&max=10&apikey=";
+    public string apiKey = "SUA_API_AQUI";
+    private string apiURL = "https://gnews.io/api/v4/top-headlines?country=br&lang=pt&max=5&apikey=";
 
-    // =========================
-    // RSS fallback
-    // =========================
-    public string rssURL = "https://g1.globo.com/rss/g1/";
-
-    // =========================
-    // UI
-    // =========================
     [Header("UI")]
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI newsText;
@@ -33,31 +21,22 @@ public class NewsSystem : MonoBehaviour
     public GameObject rationalBtn;
     public GameObject curiousBtn;
 
-    // =========================
-    // STATE
-    // =========================
+    public GameObject fecharBtn;
+
+    public TypewriterEffect typewriter;
+
     private int emocional;
     private int racional;
     private int curioso;
 
     private int index = 0;
     private bool finalizado = false;
+    private bool jaFinalizou = false;
 
-    [Header("Glitch")]
-    public float glitchSpeed = 0.03f;
-    public float glitchDuration = 1.5f;
-
-    private bool isGlitching = false;
-
-    private string originalText;
-
-    [Header("Botão Fechar")]
-    public GameObject fecharBtn;
+    public GameObject mensagemUI; //FRASE que desaparece no final
 
 
 
-    // =========================
-    // NEWS MODEL
     // =========================
     [System.Serializable]
     public class NewsItem
@@ -69,18 +48,25 @@ public class NewsSystem : MonoBehaviour
     private List<NewsItem> news = new List<NewsItem>();
 
     // =========================
-    void Start()
+    IEnumerator Start()
     {
+        // 🔥 pega a luz pelo nome do objeto
+        if (globalLight == null)
+            globalLight = GameObject.Find("Global Light 2D").GetComponent<UnityEngine.Rendering.Universal.Light2D>();
+
         fecharBtn.SetActive(false);
-        StartCoroutine(LoadNews());
+        resultText.text = "";
+
+        yield return null;
+
+        StartCoroutine(LoadNewsFromAPI());
     }
 
     // =========================
-    // LOAD NEWS
+    // 🌐 API GNEWS
     // =========================
-    IEnumerator LoadNews()
+    IEnumerator LoadNewsFromAPI()
     {
-        
         string url = apiURL + apiKey;
 
         UnityWebRequest request = UnityWebRequest.Get(url);
@@ -88,26 +74,25 @@ public class NewsSystem : MonoBehaviour
 
         if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log("Erro API, indo para RSS...");
-            yield return StartCoroutine(LoadRSS());
+            Debug.Log("API falhou → fallback local");
+            LoadFakeNews();
             yield break;
         }
 
-        GNewsResponse response =
-            JsonUtility.FromJson<GNewsResponse>(request.downloadHandler.text);
+        string json = request.downloadHandler.text;
+
+        GNewsResponse response = JsonUtility.FromJson<GNewsResponse>(json);
 
         if (response == null || response.articles == null || response.articles.Length == 0)
         {
-            Debug.Log("Resposta vazia, indo para RSS...");
-            yield return StartCoroutine(LoadRSS());
+            Debug.Log("API vazia → fallback local");
+            LoadFakeNews();
             yield break;
         }
 
         news.Clear();
 
-        int count = Mathf.Min(5, response.articles.Length);
-
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < response.articles.Length; i++)
         {
             news.Add(new NewsItem
             {
@@ -118,156 +103,176 @@ public class NewsSystem : MonoBehaviour
             });
         }
 
+        Debug.Log("API funcionando ✔ Notícias: " + news.Count);
+
         index = 0;
         ShowNews();
     }
 
     // =========================
-    // RSS fallback
+    //  FALLBACK LOCAL
     // =========================
-    IEnumerator LoadRSS()
+    void LoadFakeNews()
     {
-        UnityWebRequest request = UnityWebRequest.Get(rssURL);
-        yield return request.SendWebRequest();
+        // Debug.Log("USANDO NOTÍCIAS LOCAIS");
 
-        XmlDocument xml = new XmlDocument();
-        xml.LoadXml(request.downloadHandler.text);
-
-        XmlNodeList items = xml.GetElementsByTagName("item");
 
         news.Clear();
 
-        for (int i = 0; i < 5 && i < items.Count; i++)
+        news.Add(new NewsItem
+        
         {
-            news.Add(new NewsItem
-            {
-                title = items[i]["title"].InnerText,
-                description = "Sem descrição disponível"
-            });
-        }
+            title = "Algoritmos moldam decisões diárias",
+            description = "Estudos indicam influência crescente no comportamento humano."
+        });
+        news.Add(new NewsItem
+        
+        {
+            title = "Sistema detecta comportamento incomum",
+            description = "Usuários estão sendo analisados por padrões invisíveis."
+        });
+
+        news.Add(new NewsItem
+        {
+            title = "Nova tecnologia prevê escolhas",
+            description = "Sistema aprende com cada interação do usuário."
+        });
+
+        news.Add(new NewsItem
+        {
+            title = "Plataformas ajustam conteúdo em tempo real",
+            description = "O que você vê pode mudar com base no seu comportamento recente."
+        });
+
+        news.Add(new NewsItem
+        {
+            title = "Dados pessoais redefinem experiências digitais",
+            description = "Cada interação contribui para um perfil único dentro dos sistemas."
+        });
 
         index = 0;
         ShowNews();
     }
 
     // =========================
-    // SHOW NEWS
-    // =========================
     void ShowNews()
     {
-        if (index >= news.Count || finalizado)
+        if (finalizado) return;
+
+        if (news.Count == 0)
+        {
+            titleText.text = "Carregando notícias...";
+            newsText.text = "Verificando conexão...";
+            return;
+        }
+
+        if (index >= news.Count)
         {
             FinishGame();
             return;
         }
 
-        Debug.Log("Notícia: " + news[index].title);
-
         titleText.text = news[index].title;
         newsText.text = FormatDescription(news[index].description);
-        
+
+        Debug.Log("Mostrando: " + news[index].title);
     }
 
     // =========================
-    // CHOICES
-    // =========================
-    public void EscolhaEmocional()
-    {
-        emocional++;
-        Debug.Log("REAÇÃO | emocional = " + emocional);
-        Next();
-    }
+    public void EscolhaEmocional() { emocional++; Next(); }
+    public void EscolhaRacional() { racional++; Next(); }
+    public void EscolhaCurioso() { curioso++; Next(); }
 
-    public void EscolhaRacional()
-    {
-        racional++;
-        Debug.Log("REFLEXÃO | racional = " + racional);
-        Next();
-    }
-
-    public void EscolhaCurioso()
-    {
-        curioso++;
-        Debug.Log("DESCOBERTA | curioso = " + curioso);
-        Next();
-    }
-
-    // =========================
     void Next()
     {
         index++;
         ShowNews();
     }
 
-
-
-    IEnumerator GlitchText(TMP_Text target, string finalText)
-{
-    isGlitching = true;
-
-    float timer = 0f;
-
-    while (timer < glitchDuration)
-    {
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < finalText.Length; i++)
-        {
-            char c = finalText[i];
-
-            if (Random.value > 0.7f)
-            {
-                sb.Append(GetRandomChar());
-            }
-            else
-            {
-                sb.Append(c);
-            }
-        }
-
-        target.text = sb.ToString();
-
-        timer += glitchSpeed;
-        yield return new WaitForSeconds(glitchSpeed);
-    }
-
-    target.text = finalText;
-    isGlitching = false;
-}
-
-char GetRandomChar()
-{
-    string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
-    return chars[Random.Range(0, chars.Length)];
-}
-
     // =========================
     void FinishGame()
     {
+        if (jaFinalizou) return;
+
+        jaFinalizou = true;
         finalizado = true;
 
         emotionalBtn.SetActive(false);
         rationalBtn.SetActive(false);
         curiousBtn.SetActive(false);
-
+        mensagemUI.SetActive(false);
         fecharBtn.SetActive(true);
 
         string result;
 
-        if (emocional >= racional && emocional >= curioso)
-            result = "Perfil emocional: você reage pelo impacto.";
-        else if (racional >= curioso)
-            result = "Perfil racional: você analisa antes de agir.";
+        int max = Mathf.Max(emocional, racional, curioso);
+
+        if (emocional == max)
+            result = "Seu Perfil: emocional\n\n" +
+         "Você reage pelo impacto imediato.\n" +
+         "Conteúdos intensos capturam sua atenção rapidamente.\n\n" +
+         "Algoritmos tendem a amplificar esse comportamento,\n" +
+         "mostrando cada vez mais estímulos que provocam reação.\n\n" +
+         "Cuidado: nem tudo que impacta é verdadeiro.";
+
+        else if (racional == max)
+            result = "Seu Perfil: racional\n\n" +
+         "Você analisa antes de agir.\n" +
+         "Busca entender antes de aceitar uma informação.\n\n" +
+         "Algoritmos podem reforçar esse padrão,\n" +
+         "limitando você a conteúdos que confirmam sua lógica.\n\n" +
+         "Cuidado: até a razão pode virar uma bolha.";
+
         else
-            result = "Perfil curioso: você explora o desconhecido.";
+            result = "Seu Perfil: curioso\n\n" +
+         "Você explora o desconhecido.\n" +
+         "Novidades e mistérios chamam sua atenção.\n\n" +
+         "Algoritmos aprendem isso rapidamente,\n" +
+         "guiando você por caminhos cada vez mais específicos.\n\n" +
+         "Cuidado: nem toda descoberta leva à verdade.";
+
 
         Debug.Log("RESULTADO FINAL: " + result);
 
-        StartCoroutine(GlitchText(titleText, "RESULTADO FINAL"));
-        newsText.text = "";
-        StartCoroutine(GlitchText(resultText, result));
+        StartCoroutine(ShowFinalText(result));
+
+        StartCoroutine(AumentarLuz());
     }
 
+
+//Aumentar a luz
+    IEnumerator AumentarLuz()
+    {
+        float intensidadeInicial = globalLight.intensity;
+
+        float tempo = 0f;
+
+        while (tempo < 1f)
+        {
+            tempo += Time.deltaTime * velocidadeTransicao;
+
+            globalLight.intensity = Mathf.Lerp(intensidadeInicial, intensidadeFinal, tempo);
+
+            yield return null;
+        }
+
+        globalLight.intensity = intensidadeFinal;
+    }
+
+    IEnumerator ShowFinalText(string result)
+    {
+        newsText.text = "";
+        resultText.text = "";
+        titleText.text = "";
+
+        typewriter.ShowText(titleText, "RESULTADO FINAL");
+
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        typewriter.ShowText(resultText, result);
+    }
+
+    // =========================
     string FormatDescription(string text)
     {
         if (string.IsNullOrEmpty(text))
@@ -292,6 +297,11 @@ char GetRandomChar()
     public class GNewsArticle
     {
         public string title;
-        public string description; // 🔥 FIX IMPORTANTE
+        public string description;
     }
+
+    [Header("Luz Global")]
+    public Light2D globalLight;
+    public float intensidadeFinal = 1f;
+    public float velocidadeTransicao = 2f;
 }
