@@ -27,6 +27,10 @@ public class Chest : MonoBehaviour
     private bool bauAberto = false;
     private Coroutine puxarCoroutine = null;
 
+//Sprite ad letra E
+    [Header("Objeto Extra")]
+    public GameObject objetoDesaparecer;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -75,6 +79,12 @@ public class Chest : MonoBehaviour
 
             bauAberto = true;
 
+            // DESATIVA OBJETO
+            if (objetoDesaparecer != null)
+            {
+                objetoDesaparecer.SetActive(false);
+            }
+
             if (somAbrir != null)
                 audioSource.PlayOneShot(somAbrir);
 
@@ -86,8 +96,8 @@ public class Chest : MonoBehaviour
 
                 if (rb != null)
                 {
-                    // 🔥 EMPURRÃO FIXO (SEM DIREÇÃO DO PLAYER)
-                    Vector2 direcao = (playerScript.transform.position - transform.position).normalized;
+                    Vector2 direcao =
+                        (playerScript.transform.position - transform.position).normalized;
 
                     if (direcao == Vector2.zero)
                         direcao = Vector2.up;
@@ -95,7 +105,10 @@ public class Chest : MonoBehaviour
                     rb.velocity = direcao * forcaRecuo;
 
                     playerScript.podeMover = false;
-                    StartCoroutine(ReativarMovimento(playerScript, tempoRecuo));
+
+                    StartCoroutine(
+                        ReativarMovimento(playerScript, tempoRecuo)
+                    );
                 }
             }
 
@@ -105,7 +118,7 @@ public class Chest : MonoBehaviour
             StartCoroutine(SpawnMoedas());
 
             Debug.Log("Baú aberto!");
-}
+        }
     private IEnumerator ReativarMovimento(PlayerMovement p, float delay)
     {
         yield return new WaitForSeconds(delay);

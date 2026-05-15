@@ -19,9 +19,9 @@ public class Coin : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Adiciona pontuação
-            if (GameManager.instance != null)
+            if (CoinManager.instance != null)
             {
-                GameManager.instance.AddScore(valor);
+                CoinManager.instance.AdicionarMoeda(valor);
             }
 
             // Toca o som

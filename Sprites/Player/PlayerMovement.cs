@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     // 🔥 garante leitura imediata do input
     move = controls.Player.Move.ReadValue<Vector2>();
 
-    bool estaMovendo = move.sqrMagnitude > 0.01f;
+    bool estaMovendo = move.sqrMagnitude > 0.02f;
 
     if (estaMovendo)
     {
@@ -98,8 +98,8 @@ public class PlayerMovement : MonoBehaviour
             lastMoveY = move.y > 0 ? 1 : -1;
         }
 
-        animator.SetFloat("MoveX", move.x);
-        animator.SetFloat("MoveY", move.y);
+        animator.SetFloat("MoveX", move.x, 0.1f, Time.deltaTime);
+        animator.SetFloat("MoveY", move.y, 0.1f, Time.deltaTime);
     }
     else
     {
@@ -114,16 +114,12 @@ public class PlayerMovement : MonoBehaviour
     animator.SetBool("Puxando", estaPuxando);
 }
     private void FixedUpdate()
-    {
-        if (!podeMover || emRecuo)
-            return;
+        {
+            if (!podeMover || emRecuo)
+                return;
 
-        Vector2 normalizedMove = move.normalized;
+            Vector2 normalizedMove = move.normalized;
 
-        rb.MovePosition(rb.position + normalizedMove * moveSpeed * Time.fixedDeltaTime);
-
-        animator.SetFloat("MoveX", move.x);
-        animator.SetFloat("MoveY", move.y);
-        animator.SetBool("IsMoving", move.sqrMagnitude > 0.01f);
-    }
+            rb.MovePosition(rb.position + normalizedMove * moveSpeed * Time.fixedDeltaTime);
+        }
 }

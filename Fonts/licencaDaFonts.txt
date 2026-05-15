@@ -1,0 +1,10 @@
+## Recursos de Terceiros
+
+### Fonte VT323
+
+Copyright 2011 The VT323 Project Authors
+
+Licenciada sob a SIL Open Font License, Versão 1.1.
+Esta fonte pode ser utilizada, modificada, incorporada e redistribuída, incluindo em softwares comerciais.
+
+Licença: https://openfontlicense.org

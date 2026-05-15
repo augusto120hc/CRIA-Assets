@@ -1,0 +1,24 @@
+In-game file: typewriter_01.mp3
+
+Asset Name: Typewriter Effect
+Asset Type: Sound Effect (Keyboard Typing)
+
+Author: VirtualZero
+Source: Pixabay
+Asset URL:
+https://pixabay.com/sound-effects/film-special-effects-keyboard-typing-fast-371229/
+
+License: Pixabay License
+Attribution Required: No (optional)
+
+Description:
+Keyboard typing sound effect used for UI and text feedback
+within the video game "Sky Nexus".
+
+Usage:
+This asset is used as part of an interactive audiovisual
+work (video game) and is not redistributed as a standalone
+audio file.
+
+Download Platform: Pixabay
+Download Date: 2026-01-30

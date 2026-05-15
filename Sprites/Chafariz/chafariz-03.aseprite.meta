@@ -1,0 +1,363 @@
+fileFormatVersion: 2
+guid: 2522740a8c05bfa4b87c411c45b572f9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: chafariz-03
+    originalName: 
+    pivot: {x: 0.5, y: -0.009090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 90
+      height: 110
+    spriteID: cbea6133455b4b546956185b0a74c7d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: chafariz-03_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.009259259}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 122
+      width: 90
+      height: 108
+    spriteID: 2aeffc09e4fc6af4aadf3831af0d87c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 122}
+  - name: chafariz-03_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.009433962}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 238
+      width: 90
+      height: 106
+    spriteID: 63638876d66d14e439097ba688c9e569
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 238}
+  - name: chafariz-03_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.009433962}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 352
+      width: 90
+      height: 106
+    spriteID: e9c7056732f28bc4582bcf32004aeecf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 352}
+  - name: chafariz-03_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.009433962}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 102
+      y: 4
+      width: 90
+      height: 106
+    spriteID: 7d093b6146d28be48a555a3308ef7e07
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 102, y: 4}
+  - name: chafariz-03_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.009433962}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 102
+      y: 118
+      width: 90
+      height: 106
+    spriteID: 9489f240ebc26de4982daf3f16dd8d37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 102, y: 118}
+  - name: chafariz-03_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -0.009433962}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 102
+      y: 232
+      width: 90
+      height: 106
+    spriteID: a5bff31ebe49c4e4eb50df4fa69f769b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 102, y: 232}
+  - name: chafariz-03_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -0.009433962}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 102
+      y: 346
+      width: 90
+      height: 106
+    spriteID: e9ee2750119a93047bd0b3035d2875d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 102, y: 346}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -251222416
+    name: chafariz-03
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: chafariz-03_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 35
+        y: 1
+        width: 90
+        height: 110
+      spriteId: cbea6133455b4b546956185b0a74c7d2
+    - name: chafariz-03_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 35
+        y: 1
+        width: 90
+        height: 108
+      spriteId: 2aeffc09e4fc6af4aadf3831af0d87c6
+    - name: chafariz-03_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 35
+        y: 1
+        width: 90
+        height: 106
+      spriteId: 63638876d66d14e439097ba688c9e569
+    - name: chafariz-03_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 35
+        y: 1
+        width: 90
+        height: 106
+      spriteId: e9c7056732f28bc4582bcf32004aeecf
+    - name: chafariz-03_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 35
+        y: 1
+        width: 90
+        height: 106
+      spriteId: 7d093b6146d28be48a555a3308ef7e07
+    - name: chafariz-03_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 35
+        y: 1
+        width: 90
+        height: 106
+      spriteId: 9489f240ebc26de4982daf3f16dd8d37
+    - name: chafariz-03_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 35
+        y: 1
+        width: 90
+        height: 106
+      spriteId: a5bff31ebe49c4e4eb50df4fa69f769b
+    - name: chafariz-03_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 35
+        y: 1
+        width: 90
+        height: 106
+      spriteId: e9ee2750119a93047bd0b3035d2875d9
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 160, y: 128}

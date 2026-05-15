@@ -4,54 +4,47 @@ using System;
 
 public class PC_UIController : MonoBehaviour
 {
+    public GameObject telaPC;
     public GameObject telaBoasVindasUI;
     public GameObject telaNoticias;
 
     public TMP_Text textoData;
-    public TMP_Text textoBoasVindasTMP;
+    public TMP_Text textoBoasVindas;
 
-    public GameObject botaoInteragir; //Botao entrar no PC
-
+    public GameObject botaoInteragir;
 
     private bool pcAberto = false;
 
-    public TypewriterEffect typewriter;
-    public TMP_Text textoBoasVindas;
+    public PCTypewriter typewriter;
 
     void Start()
     {
-        telaPC.SetActive(false); // 🔥 começa fechado
-
+        telaPC.SetActive(false);
         AtualizarData();
     }
 
-  
-
-
-    void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                botaoInteragir.SetActive(true);
-            }
-        }
-
-        void OnTriggerExit2D(Collider2D other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                botaoInteragir.SetActive(false);
-            }
-        }
-
-    public GameObject telaPC; // Canvas do PC
-
-    public void FecharPC()
+    public void AbrirPC()
     {
-        telaPC.SetActive(false);
+        if (pcAberto) return;
 
-        // opcional: resetar tempo
-        Time.timeScale = 1f;
+        pcAberto = true;
+
+        telaPC.SetActive(true);
+        telaBoasVindasUI.SetActive(true);
+        telaNoticias.SetActive(false);
+
+        // 💡 segurança
+        if (typewriter != null && textoBoasVindas != null)
+        {
+            typewriter.ShowText(
+                textoBoasVindas,
+                "Sistema inicializado em:\n\nBem-vinda, Sofia...\n\nPrecisamos definir seu PERFIL"
+            );
+        }
+        else
+        {
+            Debug.LogWarning("Typewriter ou texto não atribuídos no Inspector!");
+        }
     }
 
     void AtualizarData()
@@ -60,31 +53,11 @@ public class PC_UIController : MonoBehaviour
         textoData.text = agora.ToString("dd/MM/yyyy HH:mm");
     }
 
-    // public void AbrirPC()
-    // {
-    //     if (pcAberto) return;
-
-    //     pcAberto = true;
-
-    //     telaPC.SetActive(true); // 🔥 ATIVA O CANVAS PRIMEIRO
-
-    //     telaBoasVindas.SetActive(true);
-    //     telaNoticias.SetActive(false);
-    // }
-
-    public void AbrirPC()
-        {
-            // Debug.Log("Abrindo PC e chamando typewriter");
-            if (pcAberto) return;
-
-            pcAberto = true;
-
-            telaPC.SetActive(true);
-            telaBoasVindasUI.SetActive(true);
-            telaNoticias.SetActive(false);
-
-            typewriter.ShowText(textoBoasVindas, "Sistema inicializado em: \nBem-vinda, Sofia...\nAvalie estas informações para descobrir seu Perfil ");
-        }
+    public void FecharPC()
+    {
+        telaPC.SetActive(false);
+        Time.timeScale = 1f;
+    }
 
     public void Continuar()
     {

@@ -1,56 +1,51 @@
 using UnityEngine;
-
 using UnityEngine.Rendering.Universal;
 
 public class PCInteraction : MonoBehaviour
 {
     [SerializeField] private PC_UIController pcUI;
     [SerializeField] private GameObject botaoInteragir;
-
     [SerializeField] private GameObject setaPC;
 
-    [SerializeField] private Light2D pcLight;// LUZ da TELA
-    [SerializeField] private GameObject spriteFinalPC; //Tela Preta do PC
+    [SerializeField] private GameObject portaSprite;
+    [SerializeField] private Collider2D portaCollider;
+    [SerializeField] private Light2D luzPorta;
 
-    
+    [SerializeField] private Light2D pcLight;
 
-    private bool jaInteragiu = false; //Se ja interagiu com o botao pc
+    private bool jaInteragiu = false;
 
     void Start()
     {
         botaoInteragir.SetActive(false);
+
+        if (luzPorta != null)
+            luzPorta.enabled = false;
     }
+    void LiberarJogo()
+{
+    Time.timeScale = 1f;
+    Debug.Log("JOGO DESPAUSADO");
+}
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !jaInteragiu)
         {
-            if (!jaInteragiu)
-            {
-                botaoInteragir.SetActive(true);
-                setaPC.SetActive(false);
-            }
-
-            Debug.Log("Player perto do PC");
+            botaoInteragir.SetActive(true);
+            setaPC.SetActive(false);
         }
     }
-
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !jaInteragiu)
         {
-            if (!jaInteragiu)
-            {
-                botaoInteragir.SetActive(false);
-                setaPC.SetActive(true);
-            }
-
-            Debug.Log("Player saiu do PC");
+            botaoInteragir.SetActive(false);
+            setaPC.SetActive(true);
         }
     }
 
-    // 🔥 Esse método será chamado pelo botão UI
     public void AbrirPC()
     {
         jaInteragiu = true;
@@ -59,12 +54,36 @@ public class PCInteraction : MonoBehaviour
         setaPC.SetActive(false);
 
         pcUI.AbrirPC();
+
         Time.timeScale = 0f;
 
-        if (spriteFinalPC != null)
-            spriteFinalPC.SetActive(true);
-
         if (pcLight != null)
-            pcLight.enabled = false; // 💡 DESLIGA A LUZ AQUI
+            pcLight.enabled = false;
+    }
+
+    void OnEnable()
+    {
+        if (pcUI != null && pcUI.typewriter != null)
+            pcUI.typewriter.OnFinishTyping += LiberarPorta;
+    }
+
+    void OnDisable()
+    {
+        if (pcUI != null && pcUI.typewriter != null)
+            pcUI.typewriter.OnFinishTyping -= LiberarPorta;
+    }
+
+    void LiberarPorta()
+    {
+        Time.timeScale = 1f;
+
+        if (portaSprite != null)
+            portaSprite.SetActive(false);
+
+        if (portaCollider != null)
+            portaCollider.enabled = false;
+
+        if (luzPorta != null)
+            luzPorta.enabled = true;
     }
 }

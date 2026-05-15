@@ -1,34 +1,107 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class TypewriterEffect : MonoBehaviour
 {
+    public static TypewriterEffect instance;
+
     public float delay = 0.03f;
 
-    Coroutine currentTyping;
+    public AudioSource audioSource;
+    public AudioClip typingLoopSound;
 
-    public void ShowText(TMP_Text target, string fullText)
+    private Dictionary<TMP_Text, Coroutine> typingCoroutines = new();
+
+    void Awake()
     {
-        if (currentTyping != null)
+        if (instance == null)
         {
-            StopCoroutine(currentTyping);
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-        currentTyping = StartCoroutine(TypeText(target, fullText));
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    IEnumerator TypeText(TMP_Text target, string fullText)
+    public void ShowText(TMP_Text target, string text)
     {
-        target.text = "";
+        if (instance == null || target == null) return;
 
-        foreach (char c in fullText)
+        if (typingCoroutines.TryGetValue(target, out Coroutine old))
         {
-            target.text += c;
-            yield return new WaitForSecondsRealtime(delay);
+            StopCoroutine(old);
+            typingCoroutines.Remove(target);
         }
 
-        target.text = fullText;
-        target.ForceMeshUpdate();
+        target.text = "";
+
+        Coroutine c = StartCoroutine(TypeText(target, text));
+        typingCoroutines[target] = c;
+    }
+
+        IEnumerator TypeText(TMP_Text target, string text)
+        {
+            if (target == null)
+                yield break;
+
+            StartSound();
+
+            target.text = "";
+
+            bool insideTag = false;
+
+            foreach (char c in text)
+            {
+                target.text += c;
+
+                if (c == '<')
+                    insideTag = true;
+
+                if (c == '>')
+                    insideTag = false;
+
+                // delay só em letras reais
+                if (!insideTag)
+                {
+                    yield return new WaitForSecondsRealtime(delay);
+                }
+            }
+
+            StopSound();
+
+            typingCoroutines.Remove(target);
+        }
+
+    public void StopTyping(TMP_Text target)
+    {
+        if (target == null) return;
+
+        if (typingCoroutines.TryGetValue(target, out Coroutine c))
+        {
+            StopCoroutine(c);
+            typingCoroutines.Remove(target);
+        }
+
+        StopSound();
+    }
+
+    void StartSound()
+    {
+        if (audioSource && typingLoopSound)
+        {
+            audioSource.clip = typingLoopSound;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+    }
+
+    void StopSound()
+    {
+        if (audioSource && audioSource.isPlaying)
+            audioSource.Stop();
     }
 }
