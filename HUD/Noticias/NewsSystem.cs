@@ -56,6 +56,13 @@ public class NewsSystem : MonoBehaviour
     private bool jaFinalizou = false;
     private bool passouPerfil = false;
 
+    [Header("ANÁLISE FINAL")]
+    // public GameObject painelAnaliseFinal;
+
+    // public TMP_Text textoAnalise;
+
+    // public Image imagemMaisVista;
+
     private List<NewsItem> news = new List<NewsItem>();
 
     // =========================
@@ -84,6 +91,8 @@ public class NewsSystem : MonoBehaviour
             if (lightObj != null)
                 globalLight = lightObj.GetComponent<Light2D>();
         }
+
+        // painelAnaliseFinal.SetActive(false);
 
         yield return null;
 
@@ -157,7 +166,7 @@ public class NewsSystem : MonoBehaviour
 
         news.Add(new NewsItem
         {
-            title = "Sistema detecta comportamento incomum",
+            title = "Sistemas detectam comportamentos incomuns",
 
             description =
             "Usuários começaram a ser analisados por padrões invisíveis de navegação, interação e consumo de conteúdo dentro das plataformas digitais."
@@ -177,6 +186,14 @@ public class NewsSystem : MonoBehaviour
 
             description =
             "O conteúdo exibido pode mudar constantemente de acordo com cliques, tempo de visualização e comportamento recente do usuário."
+        });
+
+        news.Add(new NewsItem
+        {
+            title = "Comportamentos digitais começam a se repetir",
+
+            description =
+            "Pesquisadores observaram que usuários expostos aos mesmos tipos de conteúdo passaram a desenvolver padrões semelhantes de opinião, consumo e interação social."
         });
 
         index = 0;
@@ -257,15 +274,17 @@ public class NewsSystem : MonoBehaviour
             perfil = "emocional";
 
             GameData.instance.perfilSofia = Perfil.Emocional;
+            PerfilGlobal.instance.perfilAtual =
+            PerfilGlobal.Perfil.Emocional;
             GameData.instance.codigoPerfil = 314;
 
             result =
-            "<color=green>Seu Perfil: <b>EMOCIONAL</b> - Seu Codigo é: <b><size=140%>314</size></b></color>\n\n" +
-            "Você reage pelo impacto imediato.\n" +
-            "Conteúdos intensos capturam sua atenção rapidamente.\n\n" +
+            "<color=green><size=180%>Seu Perfil: <b>EMOCIONAL</b> - Seu Codigo é: </size><b><size=180%>314</size></b></color>\n\n" +
+            "<size=140%>Você reage pelo impacto imediato.\n" +
+            "Conteúdos intensos capturam sua atenção rapidamente.\n" +
             "Algoritmos tendem a amplificar esse comportamento,\n" +
             "mostrando cada vez mais estímulos que provocam reação.\n\n" +
-            "Cuidado: nem tudo que impacta é verdadeiro.";
+            "Cuidado: nem tudo que impacta é verdadeiro.</size>";
         }
 
         // =========================
@@ -277,15 +296,18 @@ public class NewsSystem : MonoBehaviour
             perfil = "racional";
 
             GameData.instance.perfilSofia = Perfil.Racional;
+            PerfilGlobal.instance.perfilAtual =
+            PerfilGlobal.Perfil.Racional;
+
             GameData.instance.codigoPerfil = 806;
 
             result =
-            "<color=green>Seu Perfil: <b>RACIONAL</b> - Seu Codigo é: <b><size=140%>806</size></b></color>\n\n" +
-            "Você analisa antes de agir.\n" +
-            "Busca entender antes de aceitar uma informação.\n\n" +
+            "<color=green><size=180%>Seu Perfil: <b>RACIONAL</b> - Seu Codigo é: </size><b><size=180%>806</size></b></color>\n\n" +
+            "<size=140%>Você analisa antes de agir.\n" +
+            "Busca entender antes de aceitar uma informação.\n" +
             "Algoritmos podem reforçar esse padrão,\n" +
-            "limitando você a conteúdos que confirmam sua lógica.\n\n" +
-            "Cuidado: até a razão pode virar uma bolha.";
+            "limitando você a conteúdos que confirmam sua lógica.\n" +
+            "Cuidado: até a razão pode virar uma bolha.</size>";
         }
 
         // =========================
@@ -297,15 +319,17 @@ public class NewsSystem : MonoBehaviour
             perfil = "curioso";
 
             GameData.instance.perfilSofia = Perfil.Curioso;
+            PerfilGlobal.instance.perfilAtual =
+            PerfilGlobal.Perfil.Curiosa;
             GameData.instance.codigoPerfil = 127;
 
             result =
-            "<color=green>Seu Perfil: <b>CURIOSO</b> - Seu Codigo é: <b><size=140%>127</size></b></color>\n\n" +
-            "Você explora o desconhecido.\n" +
-            "Novidades e mistérios chamam sua atenção.\n\n" +
+            "<color=green><size=180%>Seu Perfil: <b>CURIOSO</b> - Seu Codigo é: </size><b><size=180%>127</size></b></color>\n\n" +
+            "<size=140%>Você explora o desconhecido.\n" +
+            "Novidades e mistérios chamam sua atenção.\n" +
             "Algoritmos aprendem isso rapidamente,\n" +
-            "guiando você por caminhos cada vez mais específicos.\n\n" +
-            "Cuidado: nem toda descoberta leva à verdade.";
+            "guiando você por caminhos cada vez mais específicos.\n" +
+            "Cuidado: nem toda descoberta leva à verdade.</size>";
         }
 
         StartCoroutine(ShowFinalText(result, perfil));
@@ -332,7 +356,7 @@ public class NewsSystem : MonoBehaviour
 
         TypewriterEffect.instance.ShowText(
             titleText,
-            "DEFINIMOS SEU PERFIL DE ACORDO COM SUAS ESCOLHAS"
+            "O ALGORITMO DEFINIU SEU PERFIL DE ACORDO COM SUAS ESCOLHAS"
         );
 
         yield return new WaitForSecondsRealtime(1.5f);

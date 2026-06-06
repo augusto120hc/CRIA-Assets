@@ -9,11 +9,17 @@ public class FragmentosManager : MonoBehaviour
     public bool temVontade;
     public bool temEssencia;
 
+    [Header("Avisos")]
+    public bool avisoFragmentosMostrado = false;
+
+    public bool fragmentosEntreguesAoRafa = false;
+
     private void Awake()
     {
         if(instance == null)
         {
             instance = this;
+
             DontDestroyOnLoad(gameObject);
         }
         else

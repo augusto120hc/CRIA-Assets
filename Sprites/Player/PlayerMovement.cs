@@ -73,46 +73,84 @@ public class PlayerMovement : MonoBehaviour
         apertouInteragir = false;
     }
 
-    void Update()
+    public void PararImediatamente()
 {
-    // 🔥 garante leitura imediata do input
-    move = controls.Player.Move.ReadValue<Vector2>();
+    move = Vector2.zero;
 
-    bool estaMovendo = move.sqrMagnitude > 0.02f;
+    if (rb != null)
+        rb.velocity = Vector2.zero;
 
-    if (estaMovendo)
+    animator.SetBool("IsMoving", false);
+}
+
+    void Update()
     {
-        direcaoOlhar = move.normalized;
 
-        float absX = Mathf.Abs(move.x);
-        float absY = Mathf.Abs(move.y);
+        if (!podeMover)
+    {
+        move = Vector2.zero;
 
-        if (absX > absY)
+        animator.SetFloat("MoveX", 0);
+        animator.SetFloat("MoveY", 0);
+
+        animator.SetBool("IsMoving", false);
+        animator.SetBool("Puxando", false);
+
+        return;
+    }
+
+    move = controls.Player.Move.ReadValue<Vector2>();
+        // BLOQUEIA MOVIMENTO DURANTE CUTSCENES
+        if (!podeMover)
         {
-            lastMoveX = move.x > 0 ? 1 : -1;
-            lastMoveY = 0;
+            move = Vector2.zero;
+
+            animator.SetFloat("MoveX", 0);
+            animator.SetFloat("MoveY", 0);
+
+            animator.SetBool("IsMoving", false);
+            animator.SetBool("Puxando", false);
+
+            return;
+        }
+
+        move = controls.Player.Move.ReadValue<Vector2>();
+
+        bool estaMovendo = move.sqrMagnitude > 0.02f;
+
+        if (estaMovendo)
+        {
+            direcaoOlhar = move.normalized;
+
+            float absX = Mathf.Abs(move.x);
+            float absY = Mathf.Abs(move.y);
+
+            if (absX > absY)
+            {
+                lastMoveX = move.x > 0 ? 1 : -1;
+                lastMoveY = 0;
+            }
+            else
+            {
+                lastMoveX = 0;
+                lastMoveY = move.y > 0 ? 1 : -1;
+            }
+
+            animator.SetFloat("MoveX", move.x, 0.1f, Time.deltaTime);
+            animator.SetFloat("MoveY", move.y, 0.1f, Time.deltaTime);
         }
         else
         {
-            lastMoveX = 0;
-            lastMoveY = move.y > 0 ? 1 : -1;
+            animator.SetFloat("MoveX", 0);
+            animator.SetFloat("MoveY", 0);
         }
 
-        animator.SetFloat("MoveX", move.x, 0.1f, Time.deltaTime);
-        animator.SetFloat("MoveY", move.y, 0.1f, Time.deltaTime);
-    }
-    else
-    {
-        animator.SetFloat("MoveX", 0);
-        animator.SetFloat("MoveY", 0);
-    }
+        animator.SetFloat("LastMoveX", lastMoveX);
+        animator.SetFloat("LastMoveY", lastMoveY);
 
-    animator.SetFloat("LastMoveX", lastMoveX);
-    animator.SetFloat("LastMoveY", lastMoveY);
-
-    animator.SetBool("IsMoving", estaMovendo);
-    animator.SetBool("Puxando", estaPuxando);
-}
+        animator.SetBool("IsMoving", estaMovendo);
+        animator.SetBool("Puxando", estaPuxando);
+    }
     private void FixedUpdate()
         {
             if (!podeMover || emRecuo)

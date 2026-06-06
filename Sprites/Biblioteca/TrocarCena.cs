@@ -1,16 +1,31 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PortalBiblioteca : MonoBehaviour
 {
+    [Header("Cenas")]
     public string cenaAtual = "Cena02";
 
     public string novaCena = "Biblioteca";
 
     public string nomeSpawn = "SpawnBiblioteca";
 
+    [Header("Loading UI")]
+    public GameObject painelLoading;
+
+    public Slider barraLoading;
+
     private bool carregando = false;
+
+    private void Start()
+    {
+        if(painelLoading != null)
+        {
+            painelLoading.SetActive(false);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,19 +39,55 @@ public class PortalBiblioteca : MonoBehaviour
     {
         carregando = true;
 
-        // carrega nova cena
+        // MOSTRA LOADING
+        if(painelLoading != null)
+        {
+            painelLoading.SetActive(true);
+        }
+
+        if(barraLoading != null)
+        {
+            barraLoading.value = 0f;
+        }
+
+        // pequeno delay
+        yield return new WaitForSeconds(0.5f);
+
+        // CARREGA NOVA CENA
         AsyncOperation loadScene =
             SceneManager.LoadSceneAsync(
                 novaCena,
                 LoadSceneMode.Additive
             );
 
+        loadScene.allowSceneActivation = false;
+
+        float progresso = 0f;
+
+        while(progresso < 0.9f)
+        {
+            progresso += Time.deltaTime;
+
+            if(barraLoading != null)
+            {
+                barraLoading.value = progresso;
+            }
+
+            yield return null;
+        }
+
+        // ativa cena
+        loadScene.allowSceneActivation = true;
+
         while(!loadScene.isDone)
         {
             yield return null;
         }
 
-        // move player
+        // espera estabilizar
+        yield return new WaitForSeconds(0.3f);
+
+        // MOVE PLAYER
         GameObject spawn =
             GameObject.Find(nomeSpawn);
 
@@ -46,7 +97,15 @@ public class PortalBiblioteca : MonoBehaviour
                 spawn.transform.position;
         }
 
-        // descarrega cena antiga
+        // DESCARREGA CENA ANTIGA
         SceneManager.UnloadSceneAsync(cenaAtual);
+
+        // ESCONDE LOADING
+        if(painelLoading != null)
+        {
+            painelLoading.SetActive(false);
+        }
+
+        carregando = false;
     }
 }

@@ -135,18 +135,17 @@
 
 
 
-
-
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using TMPro;
-using UnityEngine.Rendering; // 👈 IMPORTANTE
+using UnityEngine.Rendering;
 
 public class WeatherSystem : MonoBehaviour
 {
     [Header("Config API")]
     public string apiKey = "SUA_API_AQUI";
+
     public string cidade = "Sao Paulo";
 
     [Header("Sprites (mundo 2D)")]
@@ -156,56 +155,117 @@ public class WeatherSystem : MonoBehaviour
     public SpriteRenderer iconeNublado;
 
     [Header("Temperatura (placa no mundo)")]
-    public TextMeshPro temperaturaText;// 👈 agora aparece no Inspector
+    public TextMeshPro temperaturaText;
+
+    [Header("Configuração Offline")]
+    public bool usarClimaOffline = true;
+
+    public int temperaturaOffline = 22;
 
     void Start()
     {
-        ConfigurarSortingTexto(); // 👈 aplica ordem 2D
-        InvokeRepeating(nameof(AtualizarClima), 0f, 300f);
+        ConfigurarSortingTexto();
+
+        // Atualiza imediatamente
+        AtualizarClima();
+
+        // Atualiza a cada 5 minutos
+        InvokeRepeating(nameof(AtualizarClima), 300f, 300f);
     }
 
     void ConfigurarSortingTexto()
     {
-        if (temperaturaText == null) return;
+        if (temperaturaText == null)
+            return;
 
-        // Pega ou cria SortingGroup
-        SortingGroup sorting = temperaturaText.GetComponent<SortingGroup>();
+        SortingGroup sorting =
+            temperaturaText.GetComponent<SortingGroup>();
 
         if (sorting == null)
-            sorting = temperaturaText.gameObject.AddComponent<SortingGroup>();
+        {
+            sorting =
+                temperaturaText.gameObject.AddComponent<SortingGroup>();
+        }
 
-        sorting.sortingLayerName = "Foreground"; // mesma layer da placa
-        sorting.sortingOrder = 14; // maior que a placa
+        sorting.sortingLayerName = "Foreground";
+
+        sorting.sortingOrder = 14;
     }
 
     void AtualizarClima()
     {
+        // evita erro se não tiver internet
+        if (Application.internetReachability ==
+            NetworkReachability.NotReachable)
+        {
+            Debug.Log("Sem internet. Usando clima offline.");
+
+            AplicarClimaOffline();
+
+            return;
+        }
+
         StartCoroutine(GetWeather());
     }
 
     IEnumerator GetWeather()
     {
-        string url = $"https://api.openweathermap.org/data/2.5/weather?q={cidade}&appid={apiKey}&units=metric&lang=pt_br";
+        // evita chamada inválida
+        if (string.IsNullOrEmpty(apiKey) ||
+            apiKey == "SUA_API_AQUI")
+        {
+            Debug.LogWarning("API Key não configurada.");
 
-        UnityWebRequest www = UnityWebRequest.Get(url);
+            AplicarClimaOffline();
+
+            yield break;
+        }
+
+        string url =
+            $"https://api.openweathermap.org/data/2.5/weather?q={cidade}&appid={apiKey}&units=metric&lang=pt_br";
+
+        UnityWebRequest www =
+            UnityWebRequest.Get(url);
+
+        www.timeout = 10;
+
         yield return www.SendWebRequest();
 
+        // erro internet/API
         if (www.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError("Erro API: " + www.error);
+            Debug.LogWarning(
+                "Sistema climático offline: " +
+                www.error
+            );
+
+            AplicarClimaOffline();
+
+            yield break;
         }
-        else
+
+        // resposta vazia
+        if (string.IsNullOrEmpty(www.downloadHandler.text))
         {
-            string json = www.downloadHandler.text;
-            ProcessarClima(json);
+            Debug.LogWarning(
+                "Resposta da API vazia."
+            );
+
+            AplicarClimaOffline();
+
+            yield break;
         }
+
+        ProcessarClima(www.downloadHandler.text);
     }
 
-    // 📦 CLASSES JSON
+    // ---------------- JSON ----------------
+
     [System.Serializable]
     public class WeatherData
     {
         public WeatherInfo[] weather;
+
         public MainData main;
     }
 
@@ -213,6 +273,7 @@ public class WeatherSystem : MonoBehaviour
     public class WeatherInfo
     {
         public string main;
+
         public string icon;
     }
 
@@ -222,57 +283,121 @@ public class WeatherSystem : MonoBehaviour
         public float temp;
     }
 
+    // ---------------- PROCESSAR ----------------
+
     void ProcessarClima(string json)
     {
-        WeatherData data = JsonUtility.FromJson<WeatherData>(json);
+        WeatherData data =
+            JsonUtility.FromJson<WeatherData>(json);
 
-        if (data == null || data.weather.Length == 0)
+        if (data == null ||
+            data.weather == null ||
+            data.weather.Length == 0)
         {
-            Debug.LogError("Erro ao ler dados do clima");
+            Debug.LogWarning(
+                "Erro ao ler clima."
+            );
+
+            AplicarClimaOffline();
+
             return;
         }
 
         int hora = System.DateTime.Now.Hour;
-        bool isNight = hora >= 18 || hora < 6;
 
-        string clima = data.weather[0].main.ToLower();
-        float temperatura = data.main.temp;
+        bool isNight =
+            hora >= 18 || hora < 6;
 
-        // 🌡️ Temperatura
-        if (temperaturaText != null)
-            temperaturaText.text = Mathf.RoundToInt(temperatura) + "°C";
+        string clima =
+            data.weather[0].main.ToLower();
 
-        // 🔄 Desativa todos
-        if (iconeSol != null) iconeSol.enabled = false;
-        if (iconeChuva != null) iconeChuva.enabled = false;
-        if (iconeLua != null) iconeLua.enabled = false;
-        if (iconeNublado != null) iconeNublado.enabled = false;
+        float temperatura =
+            data.main.temp;
 
-        // 🌦️ Decide clima
-        // 🌙 PRIORIDADE MÁXIMA: NOITE
+        AtualizarTemperatura(temperatura);
+
+        DesativarTodosIcones();
+
+        // 🌙 prioridade noite
         if (isNight)
         {
-            if (iconeLua != null) iconeLua.enabled = true;
+            if (iconeLua != null)
+                iconeLua.enabled = true;
+
+            return;
+        }
+
+        // 🌦️ clima dia
+        if (clima.Contains("rain"))
+        {
+            if (iconeChuva != null)
+                iconeChuva.enabled = true;
+        }
+        else if (clima.Contains("clear"))
+        {
+            if (iconeSol != null)
+                iconeSol.enabled = true;
         }
         else
         {
-            // 🌦️ Clima só manda durante o dia
-            if (clima.Contains("rain"))
-            {
-                if (iconeChuva != null) iconeChuva.enabled = true;
-            }
-            else if (clima.Contains("clear"))
-            {
-                if (iconeSol != null) iconeSol.enabled = true;
-            }
-            else if (clima.Contains("cloud"))
-            {
-                if (iconeNublado != null) iconeNublado.enabled = true;
-            }
-            else
-            {
-                if (iconeNublado != null) iconeNublado.enabled = true;
-            }
+            if (iconeNublado != null)
+                iconeNublado.enabled = true;
         }
+    }
+
+    // ---------------- OFFLINE ----------------
+
+    void AplicarClimaOffline()
+    {
+        if (!usarClimaOffline)
+            return;
+
+        int hora = System.DateTime.Now.Hour;
+
+        bool isNight =
+            hora >= 18 || hora < 6;
+
+        AtualizarTemperatura(
+            temperaturaOffline
+        );
+
+        DesativarTodosIcones();
+
+        if (isNight)
+        {
+            if (iconeLua != null)
+                iconeLua.enabled = true;
+        }
+        else
+        {
+            if (iconeSol != null)
+                iconeSol.enabled = true;
+        }
+    }
+
+    // ---------------- UTIL ----------------
+
+    void AtualizarTemperatura(float temperatura)
+    {
+        if (temperaturaText != null)
+        {
+            temperaturaText.text =
+                Mathf.RoundToInt(temperatura) + "°C";
+        }
+    }
+
+    void DesativarTodosIcones()
+    {
+        if (iconeSol != null)
+            iconeSol.enabled = false;
+
+        if (iconeChuva != null)
+            iconeChuva.enabled = false;
+
+        if (iconeLua != null)
+            iconeLua.enabled = false;
+
+        if (iconeNublado != null)
+            iconeNublado.enabled = false;
     }
 }

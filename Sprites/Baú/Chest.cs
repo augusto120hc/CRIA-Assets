@@ -16,7 +16,7 @@ public class Chest : MonoBehaviour
 
     [Header("Interação")]
     public float tempoPuxando = 1.0f;
-    public float forcaRecuo = 5f; // 🔥 mais simples e consistente
+    public float forcaRecuo = 5f; //  mais simples e consistente
     public float tempoRecuo = 0.3f;
 
     [Header("Moedas")]

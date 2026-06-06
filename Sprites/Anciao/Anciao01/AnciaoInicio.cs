@@ -70,7 +70,7 @@ public class AnciaoInicio : MonoBehaviour
 
         textoBtnSim.text = "SIM";
         textoBtnNao.text = "NÃO";
-        textoBtnProximo.text = "PRÓXIMO";
+        textoBtnProximo.text = "Próximo";
     }
 
     // =========================
@@ -240,8 +240,8 @@ public class AnciaoInicio : MonoBehaviour
         btnSim.gameObject.SetActive(true);
         btnNao.gameObject.SetActive(true);
 
-        textoBtnSim.text = "SIM";
-        textoBtnNao.text = "NÃO";
+        textoBtnSim.text = "Sim";
+        textoBtnNao.text = "Não";
     }
 
     // =========================
@@ -260,9 +260,9 @@ public class AnciaoInicio : MonoBehaviour
 
             "O que quer dizer com isso?",
 
-            "Estão construindo uma grande estatueta sua na praça central. ",
+            "Estão construindo uma grande grande monólito seu na praça central. ",
 
-            "Você inventa cada coisa 😊"
+            "Você inventa cada coisa :)"
         };
 
         personagens = new string[]

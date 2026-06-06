@@ -69,7 +69,7 @@ public class NpcRafa : MonoBehaviour
 
         btnProximo.onClick.AddListener(ProximoDialogo);
 
-        textoBtnProximo.text = "PRÓXIMO";
+        textoBtnProximo.text = "Próximo";
     }
 
     // =========================
@@ -129,7 +129,7 @@ public class NpcRafa : MonoBehaviour
         {
             "Você recuperou todos os fragmentos.",
 
-            "Clareza.\nVontade.\nEssência.",
+            "Clareza.Vontade.Essência.",
 
             "Eu não tinha percebido o quanto estava me perdendo dentro desse fluxo constante.",
 
@@ -137,9 +137,11 @@ public class NpcRafa : MonoBehaviour
 
             "Então ainda é possível manter a própria identidade nesse sistema?",
 
-            "É.\nMas exige consciência sobre o que consumimos,\no que criamos\n e o que escolhemos manter.",
+            "Sim.\nMas exige consciência sobre o que consumimos,\no que criamos\n e o que escolhemos manter.",
 
-            "Obrigado por me ajudar a lembrar disso, Sofia."
+            "Obrigado por me ajudar a lembrar disso, Sofia.",
+            "Desativei as notificações, agora pesquiso o que realmente quero"
+
         };
 
         personagens = new string[]
@@ -150,6 +152,7 @@ public class NpcRafa : MonoBehaviour
             "Sofia",
             "Rafa",
             "Sofia",
+            "Rafa",
             "Rafa"
         };
         }
@@ -161,13 +164,13 @@ public class NpcRafa : MonoBehaviour
 
                 "O Algoritmo resumiu minha identidade em números.",
 
-                "Sua personalidade não desapareceu.\nEla foi fragmentada.\nClareza.\nVontade.\nEssência.",
+                "Sua personalidade não desapareceu.Ela foi fragmentada. <color=#fffc40>Clareza.Vontade.Essência.</color>",
 
                 "Uma das causas pode ser o Reforço Intermitente Positivo.",
 
                 "Fragmentada...?\nReforço Intermitente Positivo?",
 
-                "Existem partes minhas espalhadas por essa rede.",
+                "Existem partes minhas espalhadas por essa\n rede.",
 
                 "Então eu vou trazer seus fragmentos de volta."
             };
@@ -176,9 +179,9 @@ public class NpcRafa : MonoBehaviour
             {
                 "Rafa",
                 "Rafa",
-                "Rafa",
-                "Rafa",
                 "Sofia",
+                "Sofia",
+                "Rafa",
                 "Rafa",
                 "Sofia"
             };
@@ -294,6 +297,9 @@ public class NpcRafa : MonoBehaviour
             FragmentosManager.instance.temEssencia
         )
         {
+
+            FragmentosManager.instance.fragmentosEntreguesAoRafa = true;
+            
             if (bauRecompensa != null)
             {
                 bauRecompensa.SetActive(true);

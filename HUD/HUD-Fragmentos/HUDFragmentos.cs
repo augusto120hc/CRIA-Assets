@@ -74,7 +74,7 @@ public class HUDFragmentos : MonoBehaviour
 
         img.color = c;
 
-        Debug.Log("HUD ativou: " + img.name);
+        // Debug.Log("HUD ativou: " + img.name);
     }
 
     public void ColetouClareza()

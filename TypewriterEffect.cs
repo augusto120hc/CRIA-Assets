@@ -43,38 +43,60 @@ public class TypewriterEffect : MonoBehaviour
         typingCoroutines[target] = c;
     }
 
-        IEnumerator TypeText(TMP_Text target, string text)
+       IEnumerator TypeText(TMP_Text target, string text)
+{
+    if (target == null)
+        yield break;
+
+    StartSound();
+
+    string currentText = "";
+
+    bool insideTag = false;
+
+    string cursor = "<color=#52ff9e><size=90%>█</size></color>";
+
+    foreach (char c in text)
+    {
+        currentText += c;
+
+        if (c == '<')
+            insideTag = true;
+
+        if (c == '>')
+            insideTag = false;
+
+        target.text = currentText + cursor;
+
+        // delay só fora das tags
+        if (!insideTag)
         {
-            if (target == null)
-                yield break;
-
-            StartSound();
-
-            target.text = "";
-
-            bool insideTag = false;
-
-            foreach (char c in text)
-            {
-                target.text += c;
-
-                if (c == '<')
-                    insideTag = true;
-
-                if (c == '>')
-                    insideTag = false;
-
-                // delay só em letras reais
-                if (!insideTag)
-                {
-                    yield return new WaitForSecondsRealtime(delay);
-                }
-            }
-
-            StopSound();
-
-            typingCoroutines.Remove(target);
+            yield return new WaitForSecondsRealtime(delay);
         }
+    }
+
+    // PARA SOM QUANDO TERMINAR
+    StopSound();
+
+    // CURSOR PISCANDO INFINITO
+    bool visible = true;
+
+    while (true)
+    {
+        if (visible)
+        {
+            target.text = currentText + cursor;
+        }
+        else
+        {
+            target.text = currentText;
+        }
+
+        visible = !visible;
+
+        yield return new WaitForSecondsRealtime(0.4f);
+    }
+}
 
     public void StopTyping(TMP_Text target)
     {

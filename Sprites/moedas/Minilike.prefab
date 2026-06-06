@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valor: 250
-  somColeta: {fileID: 8300000, guid: 7d3c973ba33439e4494e252cb96e5335, type: 3}
+  somColeta: {fileID: 8300000, guid: 9b05cd716e0819b4a976a530fa275424, type: 3}
 --- !u!70 &3584688590271562262
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

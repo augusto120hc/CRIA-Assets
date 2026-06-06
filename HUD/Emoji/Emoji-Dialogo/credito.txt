@@ -1,0 +1,8 @@
+Icon Credits
+
+"dialog-16"
+by Olivier Cléro
+
+Category: UI Other / Mixed Grid
+License: MIT
+Fonte: https://opensvg.dev/icons/

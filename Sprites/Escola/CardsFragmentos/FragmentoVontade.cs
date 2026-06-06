@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class FragmentoVontade : MonoBehaviour
 {
@@ -17,7 +18,17 @@ public class FragmentoVontade : MonoBehaviour
     [Header("Audio")]
     public AudioClip somColeta;
 
+    [Header("NOTIFICAÇÃO")]
+    public GameObject textoNotificacao;
+
+    public TMP_Text notificacaoText;
+
+    public AudioClip somNotificacao;
+
     private bool coletado = false;
+
+    [Header("NOTIFICAÇÃO")]
+  
 
     // TEXTO FIXO
     private string descricao =
@@ -35,6 +46,18 @@ public class FragmentoVontade : MonoBehaviour
             Coletar();
         }
     }
+
+    void Start()
+        {
+            if(FragmentosManager.instance.temVontade)
+            {
+                gameObject.SetActive(false);
+
+                return;
+            }
+
+            painelFragmento.SetActive(false);
+        }
 
     void Coletar()
     {
@@ -75,5 +98,32 @@ public class FragmentoVontade : MonoBehaviour
         // ESCONDE OBJETO
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
+    }
+
+    IEnumerator MostrarNotificacao()
+    {
+        textoNotificacao.SetActive(true);
+
+        notificacaoText.text =
+        "<color=#fcae1c>Fragmento VONTADE coletado</color>";
+
+        yield return new WaitForSeconds(3f);
+
+        textoNotificacao.SetActive(false);
+    }
+
+     public void FecharPainel()
+    {
+        painelFragmento.SetActive(false);
+
+        if(somNotificacao != null)
+        {
+            AudioSource.PlayClipAtPoint(
+                somNotificacao,
+                Camera.main.transform.position
+            );
+        }
+
+        StartCoroutine(MostrarNotificacao());
     }
 }

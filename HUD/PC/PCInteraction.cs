@@ -16,12 +16,44 @@ public class PCInteraction : MonoBehaviour
     private bool jaInteragiu = false;
 
     void Start()
-    {
-        botaoInteragir.SetActive(false);
+{
+    botaoInteragir.SetActive(false);
 
+    if (GameState.portaLiberada)
+    {
+        if (portaSprite != null)
+            portaSprite.SetActive(false);
+
+        if (portaCollider != null)
+            portaCollider.enabled = false;
+
+        if (luzPorta != null)
+            luzPorta.enabled = true;
+
+        jaInteragiu = true;
+    }
+    else
+    {
         if (luzPorta != null)
             luzPorta.enabled = false;
     }
+}
+
+void LiberarPorta()
+{
+    Time.timeScale = 1f;
+
+    if (portaSprite != null)
+        portaSprite.SetActive(false);
+
+    if (portaCollider != null)
+        portaCollider.enabled = false;
+
+    if (luzPorta != null)
+        luzPorta.enabled = true;
+
+    GameState.portaLiberada = true;
+}
     void LiberarJogo()
 {
     Time.timeScale = 1f;
@@ -73,17 +105,5 @@ public class PCInteraction : MonoBehaviour
             pcUI.typewriter.OnFinishTyping -= LiberarPorta;
     }
 
-    void LiberarPorta()
-    {
-        Time.timeScale = 1f;
-
-        if (portaSprite != null)
-            portaSprite.SetActive(false);
-
-        if (portaCollider != null)
-            portaCollider.enabled = false;
-
-        if (luzPorta != null)
-            luzPorta.enabled = true;
-    }
+    
 }

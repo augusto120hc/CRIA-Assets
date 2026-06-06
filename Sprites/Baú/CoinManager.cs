@@ -5,8 +5,8 @@ public class CoinManager : MonoBehaviour
 {
     public static CoinManager instance;
 
-    [Header("Moedas")]
-    public int moedas = 0;
+    [Header("Likes")]
+    public int likes = 0;
 
     [Header("Mensagem 5000")]
     public GameObject caixaMensagem;
@@ -35,14 +35,9 @@ public class CoinManager : MonoBehaviour
 
     public void AdicionarMoeda(int valor)
     {
-        moedas += valor;
-
-        Debug.Log("Moedas coletadas: " + moedas);
-
+        likes += valor;
         AtualizarHUD();
-
-        // ativa mensagem ao chegar em 5000
-        if (moedas >= 5000 && !mensagemMostrada)
+        if (likes >= 5000 && !mensagemMostrada)
         {
             mensagemMostrada = true;
 
@@ -54,18 +49,18 @@ public class CoinManager : MonoBehaviour
         {
             TypewriterEffect.instance.ShowText(
                 mensagemText,
-               "Com likes suficientes, posso comprar uma nova máscara digital... talvez fingir ser outro alguém."
+               "<color=#59fff7>Com likes suficientes, agora tenho permisão para entrar no prédio Avatares...   :)</color>"
             );
         }
             }
         }
     }
 
-    private void AtualizarHUD()
+    public void AtualizarHUD()
     {
         if (HUDMoedas.instance != null)
         {
-            HUDMoedas.instance.AtualizarHUD(moedas);
+            HUDMoedas.instance.AtualizarHUD(likes);
         }
     }
 
